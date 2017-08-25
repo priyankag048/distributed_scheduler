@@ -11,7 +11,7 @@ describe("Jobs",()=>{
     describe("Create Job",()=>{
         it("it should POST a job",(done)=>{
             let job = {
-                id : 1,
+                id : 320,
                 description : "New Job",
                 frequency : 14,
                 script : "let a = 3"
@@ -24,7 +24,7 @@ describe("Jobs",()=>{
                 res.should.have.status(201);
                 res.body.should.be.a("object");
                 res.body.should.have.property("info");
-                res.body.should.have.property("info").eql("Record has been successfully created with id 1");
+                res.body.should.have.property("info").eql("Record has been successfully created with id 320");
             });
         })
     })
