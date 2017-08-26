@@ -1,4 +1,4 @@
 node_modules
 .DS_Store
-lib/.DS_Store
-lib/db/.DS_Store
+**/.DS_Store
+npm-debug.log

@@ -1,0 +1,32 @@
+{
+  "name": "distributed_scheduler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "mocha"
+  },
+  "author": {
+    "name": "Priyanka Guha",
+    "email": "priyankaguha.2012@gmail.com"
+  },
+  "dependencies": {
+    "amqplib": "~0.5.1",
+    "bluebird": "~3.5.0",
+    "body-parser": "~1.17.2",
+    "express": "~4.15.4",
+    "lodash": "~4.17.4",
+    "pg": "~6.1.0",
+    "pg-pool": "^2.0.3",
+    "winston": "~2.3.1"
+  },
+  "devDependencies": {
+    "chai": "~4.1.1",
+    "chai-http": "~3.0.0",
+    "commander": "^2.11.0",
+    "eslint": "~4.5.0",
+    "mocha": "~3.5.0",
+    "sinon": "~3.2.1"
+  }
+}
