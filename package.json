@@ -19,6 +19,7 @@
     "lodash": "~4.17.4",
     "pg": "~6.1.0",
     "pg-pool": "^2.0.3",
+    "redis": "^2.8.0",
     "winston": "~2.3.1"
   },
   "devDependencies": {
