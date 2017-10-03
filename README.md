@@ -1,6 +1,6 @@
 # Distributed Scheduler
 
-<p align="center"><img src="image/read.jpg" width="20em" height="20em" alt="Read me"></p>
+<p align="center"><img src="image/read.jpg"  alt="Read me"></p>
 
 ### Distributed Scheduler is an application to help the end users to schedule jobs and maintain the job frequency. The jobs will be evenly distributed among several processes based on job frequency, cached memory and CPU utilization.
 ### The processes are highly available, that is if one of the process crashes or exits, the jobs assigned to that process will automatically failover to other processes.
