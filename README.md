@@ -1,15 +1,25 @@
 # Distributed Scheduler
 
-<p align="center"><img src="image/read.jpg"  alt="Read me"></p>
+![read me](image/read.jpg)
 
-### Distributed Scheduler is an application to help the end users to schedule jobs and maintain the job frequency. The jobs will be evenly distributed among several processes based on job frequency, cached memory and CPU utilization.
-### The processes are highly available, that is if one of the process crashes or exits, the jobs assigned to that process will automatically failover to other processes.
+Overview
+---
+Distributed Scheduler is an application to help the end users to schedule jobs and maintain the job frequency. The jobs will be evenly distributed among several processes based on job frequency, cached memory and CPU utilization.
+The processes are highly available, that is if one of the process crashes or exits, the jobs assigned to that process will automatically failover to other processes.
 
-## Database : POSTgresSQL version 9.6
-#### Table **_job_** : `Job details, database structure available in lib/db/job.sql`
+![Architecture](image/architecture)
 
-## In-memory data structure store : REDIS version 4.0.1
-#### Redis is used to create sets and hashes for processes, publish/subscribe job channel, currently processing jobs and scheduled jobs.
+
+Prerequisite
+---
+1. Node.js >= 8.x.x and Npm >= 5.3.0
+2. postgreSQL 9.6
+3. Redis 4.0.1
+
+
+
+
+
 
 
 
