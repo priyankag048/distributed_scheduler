@@ -6,7 +6,7 @@ Distributed Scheduler is an application to help the end users to schedule jobs a
 The processes are highly available, that is if one of the process crashes or exits, the jobs assigned to that process will automatically failover to other processes.
 
 
-![Architecture](image/architecture1.jpg)
+![Architecture](image/architecture.jpg)
 
 
 
@@ -41,6 +41,52 @@ Database Tables
 `repeat      = true: the job will be rescheduled in an interval of the frequency, `
                `false: the job will run once`
 
+
+Configurations
+---
+The configurations are available in [config](lib/constants/config.js)
+
+`PGHOST     : postgresSQL hostname`
+
+`PGPORT     : postgresSQL port`
+
+`PGUSER     : postgresSQL username`
+
+`PGPASSWORD : postgresSQL password`
+
+`PGDATABASE : postgresSQL database name`
+
+`PORT       : port for processes and REST API url`
+
+`REDISPORT  : Redis port`
+
+`REDISHOST  : Redis hostname`
+
+`PROCESS_STORE  : A Redis Set containing all the processes to consume the jobs`
+
+`JOB_STORE : A Redis Set containing all the scheduled jobs`
+
+`JOB_PROCESSED : A Redis Set containing the jobs which is already been consumed by process to schedule. The set is maintained because if the process which has consumed these jobs exits or crashes then these jobs will be added to the JOB_STORE set again for being scheduled`
+
+`CHANNEL     : A job queue where the REST services will produce the jobs and the processes will consume the jobs`
+
+These configurations will be required to run distributed scheduler
+
+
+Running Distributed Scheduler
+---
+To run distributed scheduler, follow the steps below:
+
+1. To start a process
+
+``` cd lib/scheduler
+    node process.js --PORT <process_port> --PGHOST=<db_host> --PGPORT=<db_port> --PGUSER=<db_user> --PGPASSWORD="db_password" --PGDATABASE=<db_name> --REDISPORT=<redis_port> --REDISHOST=<redis_host> --CHANNEL=<job_queue_channel> --PROCESS_STORE=<process_store> --JOB_STORE=<job_store> --JOB_PROCESSED=<processed_job>
+```
+
+2. To start the scheduler
+``` npm start -- --PORT <port> --PGHOST=<db_host> --PGPORT=<db_port> --PGUSER=<db_user> --PGPASSWORD="db_password" --PGDATABASE=<db_name> --REDISPORT=<redis_port> --REDISHOST=<redis_host> --CHANNEL=<job_queue_channel> --PROCESS_STORE=<process_store> --JOB_STORE=<job_store> --JOB_PROCESSED=<processed_job>```
+
+3. Use a REST API service to post a job using url *_"<hostname>:<port>/jobs"_* 
 
 
 
