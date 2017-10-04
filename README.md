@@ -81,12 +81,12 @@ To run distributed scheduler, follow the steps below:
 
 ```
     cd lib/scheduler
-    node process.js --PORT <process_port> --PGHOST=<db_host> --PGPORT=<db_port> --PGUSER=<db_user> --PGPASSWORD="db_password" --PGDATABASE=<db_name> --REDISPORT=<redis_port> --REDISHOST=<redis_host> --CHANNEL=<job_queue_channel> --PROCESS_STORE=<process_store> --JOB_STORE=<job_store> --JOB_PROCESSED=<processed_job>
+    node process.js --PORT=<process_port> --PGHOST=<db_host> --PGPORT=<db_port> --PGUSER=<db_user> --PGPASSWORD="db_password" --PGDATABASE=<db_name> --REDISPORT=<redis_port> --REDISHOST=<redis_host> --CHANNEL=<job_queue_channel> --PROCESS_STORE=<process_store> --JOB_STORE=<job_store> --JOB_PROCESSED=<processed_job>
 ```
 
 2. To start the scheduler
 ```
- npm start -- --PORT <port> --PGHOST=<db_host> --PGPORT=<db_port> --PGUSER=<db_user> --PGPASSWORD="db_password" --PGDATABASE=<db_name> --REDISPORT=<redis_port> --REDISHOST=<redis_host> --CHANNEL=<job_queue_channel> --PROCESS_STORE=<process_store> --JOB_STORE=<job_store> --JOB_PROCESSED=<processed_job>
+ npm start -- --PORT=<port> --PGHOST=<db_host> --PGPORT=<db_port> --PGUSER=<db_user> --PGPASSWORD="db_password" --PGDATABASE=<db_name> --REDISPORT=<redis_port> --REDISHOST=<redis_host> --CHANNEL=<job_queue_channel> --PROCESS_STORE=<process_store> --JOB_STORE=<job_store> --JOB_PROCESSED=<processed_job>
  ```
 
 3. Use a REST API service to post a job using 
