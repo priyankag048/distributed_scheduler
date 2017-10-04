@@ -6,7 +6,7 @@ Distributed Scheduler is an application to help the end users to schedule jobs a
 The processes are highly available, that is if one of the process crashes or exits, the jobs assigned to that process will automatically failover to other processes.
 
 
-![Architecture](image/architecture.jpg =800x500)
+![Architecture](image/architecture.jpg)
 
 
 
