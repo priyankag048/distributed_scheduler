@@ -56,7 +56,7 @@ The configurations are available in [config](lib/constants/config.js)
 
 `PGDATABASE : postgresSQL database name`
 
-`PORT       : port for processes and REST API url`
+`PORT       : port for processes and REST API services`
 
 `REDISPORT  : Redis port`
 
