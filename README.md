@@ -1,7 +1,5 @@
 # Distributed Scheduler
 
-![read me](image/read.jpg)
-
 Overview
 ---
 Distributed Scheduler is an application to help the end users to schedule jobs and maintain the job frequency. The jobs will be evenly distributed among several processes based on job frequency, cached memory and CPU utilization.
