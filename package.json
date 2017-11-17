@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node lib/index.js",
-    "test": "mocha"
+    "test": "mocha test"
   },
   "author": {
     "name": "Priyanka Guha",
@@ -25,9 +25,13 @@
   "devDependencies": {
     "chai": "4.1.1",
     "chai-http": "3.0.0",
+    "coveralls": "3.0.0",
     "eslint": "4.5.0",
+    "fakeredis": "2.0.0",
+    "istanbul": "0.4.5",
     "mocha": "3.5.0",
-    "nock": "^9.0.14",
+    "nock": "9.0.14",
+    "pgtest": "0.2.2",
     "sinon": "3.2.1"
   }
 }
