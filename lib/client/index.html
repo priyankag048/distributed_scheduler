@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <form>
+            <input type="text" placeholder="Job name" id="name">
+            <input type="text" placeholder="description" id="description">
+            <input type="text" placeholder="frequency" id="frequency">
+            <textarea placeholder="jobScript" id="jobScript"></textarea>
+            <input id="repeat" type="checkbox" checked>Repeat
+            <button onclick="submitForm();return false;">Submit</button>
+        </form>
+    </div>
+    <script>
+        function submitForm() {
+            let name = jQuery("#name").val();
+            let description = jQuery("#description").val();
+            let frequency = jQuery("#frequency").val();
+            let jobScript = jQuery("#jobScript").val();
+            let repeat = jQuery("#repeat").prop('checked');
+            jQuery.ajax({
+                type: "POST",
+                url: "/scheduler/jobs",
+                data: {
+                    name,
+                    description,
+                    frequency,
+                    repeat,
+                    script: jobScript
+                },
+                success: (data) => {
+                    console.log("success");
+                },
+                error: () => {
+                    console.error("error");
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
